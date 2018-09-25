@@ -23,6 +23,7 @@ func (bc BasicCard) GetKey() string {
 type Card struct {
 	Title    string   `json:"title,omitempty"`    // Optional. The title of the card.
 	Subtitle string   `json:"subtitle,omitempty"` // Optional. The subtitle of the card.
+	FormattedText string   `json:"formattedText,omitempty"` // Optional. The subtitle of the card.
 	Buttons  []Button `json:"buttons,omitempty"`  // Optional. The collection of card buttons.
 	Image
 }
@@ -106,6 +107,7 @@ type OpenURIAction struct {
 // Image is a simple type of message sent back to dialogflow
 type Image struct {
 	ImageURI string `json:"imageUri,omitempty"` // Optional. The public URI to an image file.
+	Accessibilty string `json:"accessibilityText,omitempty"` // Optional. Accessibility text for the image
 }
 
 // GetKey implements the RichMessage interface and returns the JSON key
